@@ -85,7 +85,27 @@ Use the CDN with inline config for custom colors:
 
 ---
 
-## JavaScript Patterns
+## Responsive Design
+
+### Desktop-First Approach
+- **Design for full-size monitors first**, then adapt for mobile
+- Apps must work on both desktop and mobile devices
+- Prioritize desktop experience unless specifically instructed otherwise
+- Use responsive breakpoints to adjust layouts for smaller screens
+
+### Tailwind Breakpoints
+```html
+<!-- Desktop-first: Base styles for desktop, adapt for mobile -->
+<div class="grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
+    <!-- 3 columns on desktop, 2 on tablet, 1 on mobile -->
+</div>
+
+<!-- Show/hide based on screen size -->
+<div class="block lg:hidden">Mobile menu</div>
+<div class="hidden lg:block">Desktop navigation</div>
+```
+
+---
 
 ## JavaScript Patterns
 
@@ -136,4 +156,5 @@ const activeUsers = users
 | **HTML** | Semantic elements, accessibility |
 | **CSS** | Tailwind CSS utility classes |
 | **JavaScript** | Modern ES6+, async/await |
-| **Responsive** | Tailwind breakpoints: `sm:`, `md:`, `lg:`, `xl:` |
+| **Responsive** | Desktop-first, works on both desktop and mobile |
+| **Breakpoints** | `sm:` (640px), `md:` (768px), `lg:` (1024px), `xl:` (1280px) |
