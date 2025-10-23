@@ -1,101 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My App</title>
+    <title>Professional Template</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        // Background & Surfaces
-                        'bg-main': '#F5F7FA',
-                        'bg-surface': '#1A1F2E',
+                        'primary-bg': '#0A0E1A',
+                        'secondary-surface': '#1A1F2E',
+                        'content-bg': '#1C2832',
                         'border': '#2A3142',
-                        
-                        // Accent Colors
-                        'primary': '#4A9EFF',
-                        'primary-dark': '#3B7DD6',
-                        'link': '#5DADE2',
-                        
-                        // Text Colors
-                        'text-light': '#1A1F2E',      // on light backgrounds
-                        'text-dark': '#E8EDF2',       // on dark backgrounds
-                        'text-secondary': '#6B7A8F',
-                        'text-tertiary': '#9BA8B8',
-                        
-                        // Status Colors
-                        'success': '#4CAF50',
-                        'error': '#FF6B6B',
-                        'warning': '#FFA726',
-                        'info': '#64B5F6',
+                        'blue-highlight': '#4A9EFF',
+                        'blue-active': '#3B7DD6',
+                        'blue-link': '#5DADE2',
+                        'text-primary': '#E8EDF2',
+                        'text-secondary': '#9BA8B8',
+                        'text-tertiary': '#6B7A8F',
+                        'status-success': '#5C8D6F',
+                        'status-error': '#C75B5B',
+                        'status-warning': '#D4945C',
+                        'status-info': '#6B8CAE',
+                        'badge-success': '#2D5940',
+                        'badge-success-text': '#6FB88A',
                     }
                 }
             }
         }
     </script>
+    <style>
+        .gradient-content-bg {
+            background: linear-gradient(135deg, #1C2832 0%, #1A1F2E 100%);
+        }
+    </style>
 </head>
-<body class="bg-bg-main text-text-light min-h-screen">
+
+<body class="bg-primary-bg text-text-primary min-h-screen">
     <!-- Header -->
-    <header class="bg-bg-surface text-text-dark p-4">
-        <nav class="container mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold">My App</h1>
-            <div class="flex gap-4">
-                <a href="#" class="text-link hover:underline">Home</a>
-                <a href="#" class="text-link hover:underline">About</a>
-            </div>
-        </nav>
+    <header class="bg-secondary-surface border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <h1 class="text-3xl font-bold text-text-primary">Main Header</h1>
+            <p class="mt-2 text-text-secondary">Professional tech application interface</p>
+        </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto p-4">
-        <!-- Card Example -->
-        <div class="bg-white border border-border rounded-lg p-6 mb-6">
-            <h2 class="text-xl font-bold mb-2">Card Title</h2>
-            <p class="text-text-secondary mb-4">This is a card with some content.</p>
-            
-            <!-- Buttons -->
-            <div class="flex gap-2">
-                <button class="bg-primary hover:bg-primary-dark text-text-dark px-4 py-2 rounded">
-                    Primary Button
+    <main class="max-w-7xl mx-auto px-4 py-8">
+        <!-- Section Header -->
+        <div class="mb-8">
+            <h2 class="text-2xl font-semibold mb-2 text-text-primary">Section Title</h2>
+            <p class="text-text-secondary">Dark theme with professional color palette</p>
+        </div>
+
+        <!-- Primary Action Buttons -->
+        <div class="flex gap-4 mb-8 flex-wrap">
+            <button
+                class="bg-blue-highlight hover:bg-blue-active text-white px-6 py-2 rounded-lg font-medium transition">
+                Primary Action
+            </button>
+            <button
+                class="bg-secondary-surface hover:bg-border text-text-primary border border-border px-6 py-2 rounded-lg font-medium transition">
+                Secondary Action
+            </button>
+        </div>
+
+        <!-- Status Buttons -->
+        <div class="mb-8">
+            <h3 class="text-lg font-semibold mb-3 text-text-primary">Status Colors</h3>
+            <div class="flex gap-4 flex-wrap mb-4">
+                <button
+                    class="bg-status-success hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition">
+                    Success
                 </button>
-                <button class="bg-success hover:opacity-90 text-white px-4 py-2 rounded">
-                    Success Button
+                <button class="bg-status-error hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition">
+                    Error
                 </button>
+                <button
+                    class="bg-status-warning hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition">
+                    Warning
+                </button>
+                <button class="bg-status-info hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition">
+                    Info
+                </button>
+            </div>
+            <div class="flex gap-3 flex-wrap">
+                <span
+                    class="bg-status-success text-white text-xs font-medium px-3 py-1.5 rounded-full uppercase tracking-wide">Success</span>
+                <span
+                    class="bg-status-error text-white text-xs font-medium px-3 py-1.5 rounded-full uppercase tracking-wide">Error</span>
+                <span
+                    class="bg-status-warning text-white text-xs font-medium px-3 py-1.5 rounded-full uppercase tracking-wide">Warning</span>
+                <span
+                    class="bg-status-info text-white text-xs font-medium px-3 py-1.5 rounded-full uppercase tracking-wide">Info</span>
             </div>
         </div>
 
-        <!-- Grid Example -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div class="bg-white border border-border rounded-lg p-4">
-                <h3 class="font-bold mb-2">Item 1</h3>
-                <p class="text-text-secondary text-sm">Description here</p>
+        <!-- Feature Card with Stats -->
+        <div class="bg-secondary-surface border border-border rounded-lg mb-8 overflow-hidden">
+            <!-- Card Header -->
+            <div class="p-6 border-b border-border flex items-start justify-between">
+                <div>
+                    <h3 class="text-xl font-semibold text-text-primary">Performance Metrics</h3>
+                    <div class="flex items-center gap-3 mt-2">
+                        <span class="text-sm text-text-secondary">Last Updated:</span>
+                        <span class="text-sm text-text-tertiary">Oct 24, 2025, 02:30 PM</span>
+                        <span
+                            class="bg-badge-success text-badge-success-text text-xs font-medium px-3 py-1 rounded-full uppercase tracking-wide">Active</span>
+                    </div>
+                </div>
+                <button
+                    class="bg-secondary-surface hover:bg-border text-text-primary border border-border px-4 py-2 rounded-lg text-sm font-medium transition">
+                    Copy Data
+                </button>
             </div>
-            <div class="bg-white border border-border rounded-lg p-4">
-                <h3 class="font-bold mb-2">Item 2</h3>
-                <p class="text-text-secondary text-sm">Description here</p>
+
+            <!-- Shaded Content Section -->
+            <div class="gradient-content-bg p-6">
+                <p class="text-text-secondary mb-6 leading-relaxed">
+                    This section demonstrates the subtle shaded background that creates visual hierarchy and groups
+                    related content effectively.
+                </p>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Stat 1 -->
+                    <div>
+                        <div class="text-xs text-text-tertiary uppercase tracking-wide mb-2">Response Time</div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-text-secondary text-lg">245ms</span>
+                            <span class="text-xl text-text-secondary">→</span>
+                            <span class="text-text-primary text-lg font-semibold">180ms</span>
+                            <span class="text-status-success text-sm font-medium">(−26%)</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div>
+                        <div class="text-xs text-text-tertiary uppercase tracking-wide mb-2">Success Rate</div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-text-secondary text-lg">87%</span>
+                            <span class="text-xl text-text-secondary">→</span>
+                            <span class="text-text-primary text-lg font-semibold">94%</span>
+                            <span class="text-status-success text-sm font-medium">(+7%)</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 3 -->
+                    <div>
+                        <div class="text-xs text-text-tertiary uppercase tracking-wide mb-2">Active Users</div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-text-secondary text-lg">1.2K</span>
+                            <span class="text-xl text-text-secondary">→</span>
+                            <span class="text-text-primary text-lg font-semibold">1.8K</span>
+                            <span class="text-status-success text-sm font-medium">(+50%)</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 4 -->
+                    <div>
+                        <div class="text-xs text-text-tertiary uppercase tracking-wide mb-2">Error Rate</div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-text-secondary text-lg">2.1%</span>
+                            <span class="text-xl text-text-secondary">→</span>
+                            <span class="text-text-primary text-lg font-semibold">3.8%</span>
+                            <span class="text-status-error text-sm font-medium">(+81%)</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 5 -->
+                    <div>
+                        <div class="text-xs text-text-tertiary uppercase tracking-wide mb-2">Throughput</div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-text-secondary text-lg">450</span>
+                            <span class="text-xl text-text-secondary">→</span>
+                            <span class="text-text-primary text-lg font-semibold">720</span>
+                            <span class="text-status-success text-sm font-medium">(+60%)</span>
+                        </div>
+                    </div>
+
+                    <!-- Stat 6 -->
+                    <div>
+                        <div class="text-xs text-text-tertiary uppercase tracking-wide mb-2">Latency P95</div>
+                        <div class="flex items-center gap-3">
+                            <span class="text-text-secondary text-lg">890ms</span>
+                            <span class="text-xl text-text-secondary">→</span>
+                            <span class="text-text-primary text-lg font-semibold">620ms</span>
+                            <span class="text-status-success text-sm font-medium">(−30%)</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bg-white border border-border rounded-lg p-4">
-                <h3 class="font-bold mb-2">Item 3</h3>
-                <p class="text-text-secondary text-sm">Description here</p>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- Card 1 -->
+            <div
+                class="bg-secondary-surface border border-border rounded-lg hover:border-blue-highlight transition overflow-hidden">
+                <div class="gradient-content-bg p-6">
+                    <h3 class="text-xl font-semibold mb-3 text-text-primary">Card Title 1</h3>
+                    <p class="mb-4 text-text-secondary">Dark themed cards with subtle shaded backgrounds and hover
+                        effects.
+                    </p>
+                    <button class="font-medium text-blue-link hover:text-blue-highlight transition">
+                        Learn More →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="bg-secondary-surface border border-border rounded-lg hover:border-blue-highlight transition overflow-hidden">
+                <div class="gradient-content-bg p-6">
+                    <h3 class="text-xl font-semibold mb-3 text-text-primary">Card Title 2</h3>
+                    <p class="mb-4 text-text-secondary">Professional dark theme with excellent contrast and readability.
+                    </p>
+                    <button class="font-medium text-blue-link hover:text-blue-highlight transition">
+                        Learn More →
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+                class="bg-secondary-surface border border-border rounded-lg hover:border-blue-highlight transition overflow-hidden">
+                <div class="gradient-content-bg p-6">
+                    <h3 class="text-xl font-semibold mb-3 text-text-primary">Card Title 3</h3>
+                    <p class="mb-4 text-text-secondary">Clean, modern dark interface with cohesive color system.</p>
+                    <button class="font-medium text-blue-link hover:text-blue-highlight transition">
+                        Learn More →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Color Swatches for Reference -->
+        <div class="mb-8">
+            <h3 class="text-lg font-semibold mb-3 text-text-primary">Dark Theme Color Palette</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-primary-bg border border-border p-4 rounded-lg">
+                    <div class="text-xs font-mono mb-1 text-text-primary">#0A0E1A</div>
+                    <div class="text-xs text-text-secondary">Main BG</div>
+                </div>
+                <div class="bg-secondary-surface border border-border p-4 rounded-lg">
+                    <div class="text-xs font-mono mb-1 text-text-primary">#1A1F2E</div>
+                    <div class="text-xs text-text-secondary">Cards</div>
+                </div>
+                <div class="bg-blue-highlight p-4 rounded-lg">
+                    <div class="text-xs font-mono mb-1 text-white">#4A9EFF</div>
+                    <div class="text-xs text-white">Primary</div>
+                </div>
+                <div class="bg-blue-link p-4 rounded-lg">
+                    <div class="text-xs font-mono mb-1 text-white">#5DADE2</div>
+                    <div class="text-xs text-white">Links</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text Section -->
+        <div class="mt-8 bg-secondary-surface border border-border rounded-lg p-8">
+            <h2 class="text-2xl font-bold mb-4 text-text-primary">Content Section</h2>
+            <p class="mb-4 text-text-primary">
+                This is a paragraph of text using the dark theme palette. The color system provides
+                excellent readability and professional appearance.
+            </p>
+            <p class="mb-4 text-text-secondary">
+                This paragraph uses a secondary text color for less prominent information. The hierarchy
+                creates visual interest while maintaining clarity.
+            </p>
+            <p class="mb-4 text-sm text-text-tertiary">
+                Small metadata or supplementary information uses tertiary text color for the lowest emphasis.
+            </p>
+            <div class="flex gap-3 mt-6 flex-wrap">
+                <button
+                    class="bg-blue-highlight hover:bg-blue-active text-white px-5 py-2 rounded-lg font-medium transition">
+                    Primary Action
+                </button>
+                <button class="bg-status-error hover:opacity-90 text-white px-5 py-2 rounded-lg font-medium transition">
+                    Destructive Action
+                </button>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-bg-surface text-text-dark p-4 mt-8">
-        <div class="container mx-auto text-center text-text-secondary">
-            <p>&copy; 2025 My App. All rights reserved.</p>
+    <footer class="bg-secondary-surface border-t border-border mt-12 py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-text-tertiary">© 2025 Professional Application</p>
         </div>
     </footer>
-
-    <script>
-        // Example JavaScript
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log('Page loaded!');
-        });
-    </script>
 </body>
+
 </html>
