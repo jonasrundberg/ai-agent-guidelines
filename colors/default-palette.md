@@ -2,20 +2,20 @@
 
 ## Overview
 This color palette is designed for any user interfaces.
-The theme uses muted but clear colors with a darker aesthetic.
+The theme uses soft, clean colors with a light aesthetic.
 
 ---
 
 ## Primary Colors
 
 ### Background & Surfaces
-- **`#0A0E1A`** - Main background color
-  - Use for: Page backgrounds, main container backgrounds
-  - Dark blue-black that provides the foundation for all interfaces
+- **`#F5F7FA`** - Main background
+  - Use for: Page backgrounds, main canvas areas
+  - Soft off-white with subtle blue-gray tint
 
 - **`#1A1F2E`** - Secondary surface
   - Use for: Cards, panels, modals, elevated components
-  - Slightly lighter than main background for visual hierarchy
+  - Dark surface for elevated components and contrast
 
 - **`#2A3142`** - Borders & dividers
   - Use for: Borders, dividers, subtle separators
@@ -43,15 +43,19 @@ The theme uses muted but clear colors with a darker aesthetic.
 ## Text Colors
 
 ### Typography Hierarchy
-- **`#E8EDF2`** - Primary text
-  - Use for: Headings, body text, primary content
-  - High contrast white with slight blue tint
+- **`#1A1F2E`** - Primary text (on light backgrounds)
+  - Use for: Headings, body text, primary content on light backgrounds
+  - High contrast dark text
 
-- **`#9BA8B8`** - Secondary text
+- **`#E8EDF2`** - Primary text (on dark backgrounds)
+  - Use for: Headings, body text on dark surfaces
+  - High contrast light text
+
+- **`#6B7A8F`** - Secondary text
   - Use for: Subtitles, descriptions, labels
-  - Reduced emphasis for supporting information
+  - Works on both light and dark backgrounds
 
-- **`#6B7A8F`** - Tertiary text
+- **`#9BA8B8`** - Tertiary text
   - Use for: Metadata, timestamps, placeholder text
   - Lowest emphasis for auxiliary information
 
@@ -81,20 +85,23 @@ The theme uses muted but clear colors with a darker aesthetic.
 ## Usage Guidelines
 
 ### Do's
-- Use `#0A0E1A` as the base for all pages
-- Layer `#1A1F2E` on top for cards and components
+- Use `#F5F7FA` as the base for all pages
+- Layer `#1A1F2E` on top for cards and dark components
 - Use `#4A9EFF` sparingly for important interactive elements
-- Maintain text hierarchy with the three text colors
+- Maintain text hierarchy with appropriate colors based on background
+- Use `#1A1F2E` for text on light backgrounds, `#E8EDF2` for text on dark backgrounds
 - Use status colors only for their intended purposes
 
 ### Don'ts
 - Don't use bright, saturated colors outside the status palette
 - Don't mix status colors for non-status purposes
-- Don't use pure white (`#FFFFFF`) - always use `#E8EDF2` for text
+- Don't use pure black (`#000000`) or pure white (`#FFFFFF`) - use designated palette colors
 - Don't create harsh borders - use `#2A3142` for subtle definition
+- Don't place `#1A1F2E` text on `#1A1F2E` backgrounds
 
 ### Accessibility
-- Primary text (`#E8EDF2`) on main background (`#0A0E1A`) meets WCAG AA standards
+- Primary text (`#1A1F2E`) on main background (`#F5F7FA`) meets WCAG AAA standards
+- Light text (`#E8EDF2`) on dark surfaces (`#1A1F2E`) meets WCAG AA standards
 - Accent colors (`#4A9EFF`, `#5DADE2`) provide sufficient contrast for interactive elements
 - Status colors are distinguishable for colorblind users
 
@@ -107,19 +114,28 @@ color: #E8EDF2;
 /* Button primary hover */
 background: #3B7DD6;
 
-/* Card */
-background: #1A1F2E;
+/* Card on light background */
+background: #FFFFFF;
 border: 1px solid #2A3142;
+color: #1A1F2E;
 
-/* Input field */
+/* Card on dark background */
 background: #1A1F2E;
 border: 1px solid #2A3142;
 color: #E8EDF2;
 
+/* Input field on light background */
+background: #FFFFFF;
+border: 1px solid #2A3142;
+color: #1A1F2E;
+
 /* Input field focus */
 border-color: #4A9EFF;
 
-/* Link */
+/* Link on light background */
+color: #5DADE2;
+
+/* Link on dark background */
 color: #5DADE2;
 ```
 
@@ -129,15 +145,16 @@ color: #5DADE2;
 
 | Purpose | Color | Hex |
 |---------|-------|-----|
-| Main background | Dark blue-black | `#0A0E1A` |
-| Card/panel | Secondary surface | `#1A1F2E` |
+| Main background | Soft off-white | `#F5F7FA` |
+| Card/panel (dark) | Dark surface | `#1A1F2E` |
 | Border | Subtle gray-blue | `#2A3142` |
 | Hover/highlight | Blue | `#4A9EFF` |
 | Active state | Dark blue | `#3B7DD6` |
 | Link | Light blue | `#5DADE2` |
-| Primary text | Off-white | `#E8EDF2` |
-| Secondary text | Medium gray | `#9BA8B8` |
-| Tertiary text | Dark gray | `#6B7A8F` |
+| Primary text (light bg) | Dark blue-gray | `#1A1F2E` |
+| Primary text (dark bg) | Off-white | `#E8EDF2` |
+| Secondary text | Medium gray | `#6B7A8F` |
+| Tertiary text | Light gray | `#9BA8B8` |
 | Success | Green | `#4CAF50` |
 | Error | Coral red | `#FF6B6B` |
 | Warning | Orange | `#FFA726` |
