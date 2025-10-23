@@ -74,9 +74,10 @@ The color palette uses a **light theme** with dual text colors:
 - Custom exception classes for domain errors
 
 ### Web Standards
-- TypeScript preferred over JavaScript
-- Mobile-first responsive design with `min-width` media queries
-- CSS custom properties for theming
+- **Tailwind CSS** for all styling (CDN setup with inline config)
+- **Desktop-first** responsive design (prioritize full monitors over mobile)
+- Apps must work on both desktop and mobile devices
+- Vanilla JavaScript (ES6+) with async/await
 - Semantic HTML5 elements mandatory
 
 ## Common Workflows
