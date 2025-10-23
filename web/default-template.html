@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Background & Surfaces
+                        'bg-main': '#F5F7FA',
+                        'bg-surface': '#1A1F2E',
+                        'border': '#2A3142',
+                        
+                        // Accent Colors
+                        'primary': '#4A9EFF',
+                        'primary-dark': '#3B7DD6',
+                        'link': '#5DADE2',
+                        
+                        // Text Colors
+                        'text-light': '#1A1F2E',      // on light backgrounds
+                        'text-dark': '#E8EDF2',       // on dark backgrounds
+                        'text-secondary': '#6B7A8F',
+                        'text-tertiary': '#9BA8B8',
+                        
+                        // Status Colors
+                        'success': '#4CAF50',
+                        'error': '#FF6B6B',
+                        'warning': '#FFA726',
+                        'info': '#64B5F6',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bg-main text-text-light min-h-screen">
+    <!-- Header -->
+    <header class="bg-bg-surface text-text-dark p-4">
+        <nav class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">My App</h1>
+            <div class="flex gap-4">
+                <a href="#" class="text-link hover:underline">Home</a>
+                <a href="#" class="text-link hover:underline">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto p-4">
+        <!-- Card Example -->
+        <div class="bg-white border border-border rounded-lg p-6 mb-6">
+            <h2 class="text-xl font-bold mb-2">Card Title</h2>
+            <p class="text-text-secondary mb-4">This is a card with some content.</p>
+            
+            <!-- Buttons -->
+            <div class="flex gap-2">
+                <button class="bg-primary hover:bg-primary-dark text-text-dark px-4 py-2 rounded">
+                    Primary Button
+                </button>
+                <button class="bg-success hover:opacity-90 text-white px-4 py-2 rounded">
+                    Success Button
+                </button>
+            </div>
+        </div>
+
+        <!-- Grid Example -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-white border border-border rounded-lg p-4">
+                <h3 class="font-bold mb-2">Item 1</h3>
+                <p class="text-text-secondary text-sm">Description here</p>
+            </div>
+            <div class="bg-white border border-border rounded-lg p-4">
+                <h3 class="font-bold mb-2">Item 2</h3>
+                <p class="text-text-secondary text-sm">Description here</p>
+            </div>
+            <div class="bg-white border border-border rounded-lg p-4">
+                <h3 class="font-bold mb-2">Item 3</h3>
+                <p class="text-text-secondary text-sm">Description here</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-bg-surface text-text-dark p-4 mt-8">
+        <div class="container mx-auto text-center text-text-secondary">
+            <p>&copy; 2025 My App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Example JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Page loaded!');
+        });
+    </script>
+</body>
+</html>
