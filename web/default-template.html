@@ -4,47 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Template</title>
+    <title>HTML Template</title>
+    <!-- Heroicons: Copy SVG code from https://heroicons.com/ for icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        'primary-bg': '#0A0E1A',
-                        'secondary-surface': '#1A1F2E',
-                        'content-bg': '#1C2832',
-                        'border': '#2A3142',
-                        'blue-highlight': '#4A9EFF',
-                        'blue-active': '#3B7DD6',
-                        'blue-link': '#5DADE2',
-                        'text-primary': '#E8EDF2',
-                        'text-secondary': '#9BA8B8',
-                        'text-tertiary': '#6B7A8F',
+                        'blue-highlight': '#5A7A99',
+                        'blue-active': '#4D6A85',
+                        'blue-link': '#6B8CAE',
                         'status-success': '#5C8D6F',
                         'status-error': '#C75B5B',
                         'status-warning': '#D4945C',
                         'status-info': '#6B8CAE',
-                        'badge-success': '#2D5940',
-                        'badge-success-text': '#6FB88A',
                     }
                 }
             }
         }
     </script>
     <style>
+        /* Light mode gradient */
         .gradient-content-bg {
+            background: linear-gradient(135deg, #F5F7FA 0%, #FFFFFF 100%);
+        }
+
+        /* Dark mode gradient */
+        .dark .gradient-content-bg {
             background: linear-gradient(135deg, #1C2832 0%, #1A1F2E 100%);
         }
     </style>
+    <script>
+            // Theme initialization - runs before page render to prevent flash
+            (function () {
+                const theme = localStorage.getItem('theme') ||
+                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                }
+            })();
+    </script>
 </head>
 
-<body class="bg-primary-bg text-text-primary min-h-screen">
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
     <!-- Header -->
-    <header class="bg-secondary-surface border-b border-border">
-        <div class="max-w-7xl mx-auto px-4 py-6">
-            <h1 class="text-3xl font-bold text-text-primary">Main Header</h1>
-            <p class="mt-2 text-text-secondary">Professional tech application interface</p>
+    <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Main Header</h1>
+                <p class="mt-2 text-gray-600 dark:text-gray-400">Professional tech application interface</p>
+            </div>
+            <!-- Theme Toggle Button -->
+            <button id="themeToggle"
+                class="p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition"
+                aria-label="Toggle theme">
+                <!-- Sun icon (shown in dark mode) -->
+                <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5 hidden dark:block">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                </svg>
+                <!-- Moon icon (shown in light mode) -->
+                <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5 block dark:hidden">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                </svg>
+            </button>
         </div>
     </header>
 
@@ -52,38 +80,70 @@
     <main class="max-w-7xl mx-auto px-4 py-8">
         <!-- Section Header -->
         <div class="mb-8">
-            <h2 class="text-2xl font-semibold mb-2 text-text-primary">Section Title</h2>
-            <p class="text-text-secondary">Dark theme with professional color palette</p>
+            <h2 class="text-2xl font-semibold mb-2 text-gray-900 dark:text-gray-100">Section Title</h2>
+            <p class="text-gray-600 dark:text-gray-400">Professional theme with automatic light/dark mode</p>
         </div>
 
         <!-- Primary Action Buttons -->
         <div class="flex gap-4 mb-8 flex-wrap">
             <button
-                class="bg-blue-highlight hover:bg-blue-active text-white px-6 py-2 rounded-lg font-medium transition">
+                class="bg-blue-highlight hover:bg-blue-active text-white px-6 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
                 Primary Action
             </button>
             <button
-                class="bg-secondary-surface hover:bg-border text-text-primary border border-border px-6 py-2 rounded-lg font-medium transition">
+                class="bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 px-6 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                </svg>
                 Secondary Action
             </button>
         </div>
 
         <!-- Status Buttons -->
         <div class="mb-8">
-            <h3 class="text-lg font-semibold mb-3 text-text-primary">Status Colors</h3>
+            <h3 class="text-lg font-semibold mb-3 text-gray-900 dark:text-gray-100">Status Colors</h3>
             <div class="flex gap-4 flex-wrap mb-4">
                 <button
-                    class="bg-status-success hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition">
+                    class="bg-status-success hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
                     Success
                 </button>
-                <button class="bg-status-error hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition">
+                <button
+                    class="bg-status-error hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                    </svg>
                     Error
                 </button>
                 <button
-                    class="bg-status-warning hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition">
+                    class="bg-status-warning hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                    </svg>
                     Warning
                 </button>
-                <button class="bg-status-info hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition">
+                <button
+                    class="bg-status-info hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
                     Info
                 </button>
             </div>
@@ -100,27 +160,33 @@
         </div>
 
         <!-- Feature Card with Stats -->
-        <div class="bg-secondary-surface border border-border rounded-lg mb-8 overflow-hidden">
+        <div
+            class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg mb-8 overflow-hidden shadow-sm">
             <!-- Card Header -->
-            <div class="p-6 border-b border-border flex items-start justify-between">
+            <div class="p-6 border-b border-gray-200 dark:border-gray-700 flex items-start justify-between">
                 <div>
-                    <h3 class="text-xl font-semibold text-text-primary">Performance Metrics</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Performance Metrics</h3>
                     <div class="flex items-center gap-3 mt-2">
-                        <span class="text-sm text-text-secondary">Last Updated:</span>
-                        <span class="text-sm text-text-tertiary">Oct 24, 2025, 02:30 PM</span>
+                        <span class="text-sm text-gray-600 dark:text-gray-400">Last Updated:</span>
+                        <span class="text-sm text-gray-500 dark:text-gray-500">Oct 24, 2025, 02:30 PM</span>
                         <span
-                            class="bg-badge-success text-badge-success-text text-xs font-medium px-3 py-1 rounded-full uppercase tracking-wide">Active</span>
+                            class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs font-medium px-3 py-1 rounded-full uppercase tracking-wide">Active</span>
                     </div>
                 </div>
                 <button
-                    class="bg-secondary-surface hover:bg-border text-text-primary border border-border px-4 py-2 rounded-lg text-sm font-medium transition">
+                    class="bg-blue-highlight hover:bg-blue-active text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184" />
+                    </svg>
                     Copy Data
                 </button>
             </div>
 
             <!-- Shaded Content Section -->
             <div class="gradient-content-bg p-6">
-                <p class="text-text-secondary mb-6 leading-relaxed">
+                <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
                     This section demonstrates the subtle shaded background that creates visual hierarchy and groups
                     related content effectively.
                 </p>
@@ -129,21 +195,31 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <!-- Stat 1 -->
                     <div>
-                        <div class="text-xs text-text-tertiary uppercase tracking-wide mb-2">Response Time</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wide mb-2">Response Time
+                        </div>
                         <div class="flex items-center gap-3">
-                            <span class="text-text-secondary text-lg">245ms</span>
-                            <span class="text-xl text-text-secondary">→</span>
-                            <span class="text-text-primary text-lg font-semibold">180ms</span>
+                            <span class="text-gray-600 dark:text-gray-400 text-lg">245ms</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 text-gray-600 dark:text-gray-400">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                            </svg>
+                            <span class="text-gray-900 dark:text-gray-100 text-lg font-semibold">180ms</span>
                             <span class="text-status-success text-sm font-medium">(−26%)</span>
                         </div>
                     </div>
 
                     <!-- Stat 2 -->
                     <div>
-                        <div class="text-xs text-text-tertiary uppercase tracking-wide mb-2">Success Rate</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wide mb-2">Success Rate
+                        </div>
                         <div class="flex items-center gap-3">
                             <span class="text-text-secondary text-lg">87%</span>
-                            <span class="text-xl text-text-secondary">→</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 text-text-secondary">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                            </svg>
                             <span class="text-text-primary text-lg font-semibold">94%</span>
                             <span class="text-status-success text-sm font-medium">(+7%)</span>
                         </div>
@@ -151,10 +227,15 @@
 
                     <!-- Stat 3 -->
                     <div>
-                        <div class="text-xs text-text-tertiary uppercase tracking-wide mb-2">Active Users</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wide mb-2">Active Users
+                        </div>
                         <div class="flex items-center gap-3">
                             <span class="text-text-secondary text-lg">1.2K</span>
-                            <span class="text-xl text-text-secondary">→</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 text-text-secondary">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                            </svg>
                             <span class="text-text-primary text-lg font-semibold">1.8K</span>
                             <span class="text-status-success text-sm font-medium">(+50%)</span>
                         </div>
@@ -162,10 +243,15 @@
 
                     <!-- Stat 4 -->
                     <div>
-                        <div class="text-xs text-text-tertiary uppercase tracking-wide mb-2">Error Rate</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wide mb-2">Error Rate
+                        </div>
                         <div class="flex items-center gap-3">
                             <span class="text-text-secondary text-lg">2.1%</span>
-                            <span class="text-xl text-text-secondary">→</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 text-text-secondary">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                            </svg>
                             <span class="text-text-primary text-lg font-semibold">3.8%</span>
                             <span class="text-status-error text-sm font-medium">(+81%)</span>
                         </div>
@@ -173,10 +259,15 @@
 
                     <!-- Stat 5 -->
                     <div>
-                        <div class="text-xs text-text-tertiary uppercase tracking-wide mb-2">Throughput</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wide mb-2">Throughput
+                        </div>
                         <div class="flex items-center gap-3">
                             <span class="text-text-secondary text-lg">450</span>
-                            <span class="text-xl text-text-secondary">→</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 text-text-secondary">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                            </svg>
                             <span class="text-text-primary text-lg font-semibold">720</span>
                             <span class="text-status-success text-sm font-medium">(+60%)</span>
                         </div>
@@ -184,10 +275,15 @@
 
                     <!-- Stat 6 -->
                     <div>
-                        <div class="text-xs text-text-tertiary uppercase tracking-wide mb-2">Latency P95</div>
+                        <div class="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wide mb-2">Latency P95
+                        </div>
                         <div class="flex items-center gap-3">
                             <span class="text-text-secondary text-lg">890ms</span>
-                            <span class="text-xl text-text-secondary">→</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-5 h-5 text-text-secondary">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                            </svg>
                             <span class="text-text-primary text-lg font-semibold">620ms</span>
                             <span class="text-status-success text-sm font-medium">(−30%)</span>
                         </div>
@@ -206,8 +302,14 @@
                     <p class="mb-4 text-text-secondary">Dark themed cards with subtle shaded backgrounds and hover
                         effects.
                     </p>
-                    <button class="font-medium text-blue-link hover:text-blue-highlight transition">
-                        Learn More →
+                    <button
+                        class="font-medium text-blue-link hover:text-blue-highlight transition flex items-center gap-2">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -219,8 +321,14 @@
                     <h3 class="text-xl font-semibold mb-3 text-text-primary">Card Title 2</h3>
                     <p class="mb-4 text-text-secondary">Professional dark theme with excellent contrast and readability.
                     </p>
-                    <button class="font-medium text-blue-link hover:text-blue-highlight transition">
-                        Learn More →
+                    <button
+                        class="font-medium text-blue-link hover:text-blue-highlight transition flex items-center gap-2">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -231,8 +339,14 @@
                 <div class="gradient-content-bg p-6">
                     <h3 class="text-xl font-semibold mb-3 text-text-primary">Card Title 3</h3>
                     <p class="mb-4 text-text-secondary">Clean, modern dark interface with cohesive color system.</p>
-                    <button class="font-medium text-blue-link hover:text-blue-highlight transition">
-                        Learn More →
+                    <button
+                        class="font-medium text-blue-link hover:text-blue-highlight transition flex items-center gap-2">
+                        Learn More
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -251,11 +365,11 @@
                     <div class="text-xs text-text-secondary">Cards</div>
                 </div>
                 <div class="bg-blue-highlight p-4 rounded-lg">
-                    <div class="text-xs font-mono mb-1 text-white">#4A9EFF</div>
+                    <div class="text-xs font-mono mb-1 text-white">#5A7A99</div>
                     <div class="text-xs text-white">Primary</div>
                 </div>
                 <div class="bg-blue-link p-4 rounded-lg">
-                    <div class="text-xs font-mono mb-1 text-white">#5DADE2</div>
+                    <div class="text-xs font-mono mb-1 text-white">#6B8CAE</div>
                     <div class="text-xs text-white">Links</div>
                 </div>
             </div>
@@ -288,11 +402,29 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-secondary-surface border-t border-border mt-12 py-6">
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-12 py-6">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-text-tertiary">© 2025 Professional Application</p>
+            <p class="text-gray-500 dark:text-gray-400">© 2025 </p>
         </div>
     </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+
+        themeToggle.addEventListener('click', () => {
+            const html = document.documentElement;
+            const isDark = html.classList.contains('dark');
+
+            if (isDark) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
 </body>
 
 </html>

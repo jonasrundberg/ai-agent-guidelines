@@ -9,7 +9,12 @@ This is a **meta-repository** containing markdown guidelines that AI coding agen
 ```
 colors/          # Color palettes (e.g., default-palette.md)
 python/          # Python coding standards (e.g., standards.md)
-web/             # Web development standards (e.g., standards.md)
+web/             # Web development standards and templates
+  standards.md   # Web development guidelines
+  default-template.html      # Standard template with light/dark mode
+  light-template.html        # Light theme only template
+  sidepanel-template.html    # Template with sidebar navigation
+  examples/      # Example implementations
 apis/            # API integration guidelines (empty - future)
 databases/       # Database schemas and patterns (empty - future)
 README.md        # Main entry point with usage examples
@@ -62,10 +67,12 @@ Brief description of what this guideline covers
 ```
 
 ### Color Palette Structure
-The color palette uses a **light theme** with dual text colors:
-- Light backgrounds (`#F5F7FA`) with dark text (`#1A1F2E`)
-- Dark surfaces (`#1A1F2E`) with light text (`#E8EDF2`)
-- All colors include hex codes, usage descriptions, and component examples
+The color palette supports **both light and dark themes** with adaptive colors:
+- **Light theme**: Light backgrounds (`#F5F7FA`) with dark text (`#1A1F2E`)
+- **Dark theme**: Dark backgrounds (`#0A0E1A`) with light text (`#E8EDF2`)
+- **Shared colors**: Accent colors (`#5A7A99`, `#4D6A85`, `#6B8CAE`) work in both themes
+- All colors include hex codes, Tailwind equivalents, usage descriptions, and component examples
+- Templates include automatic OS theme detection with manual toggle override
 
 ### Python Standards
 - PEP 8 with 88-character line length (Black standard)
@@ -75,10 +82,13 @@ The color palette uses a **light theme** with dual text colors:
 
 ### Web Standards
 - **Tailwind CSS** for all styling (CDN setup with inline config)
+- **Light/Dark mode support** using Tailwind's `dark:` classes with `darkMode: 'class'`
+- **OS theme detection** with `prefers-color-scheme` media query
 - **Desktop-first** responsive design (prioritize full monitors over mobile)
 - Apps must work on both desktop and mobile devices
 - Vanilla JavaScript (ES6+) with async/await
 - Semantic HTML5 elements mandatory
+- Theme persistence via `localStorage`
 
 ## Common Workflows
 
@@ -117,7 +127,8 @@ The color palette uses a **light theme** with dual text colors:
 - Use tables for quick reference (consistent columns across files)
 
 ### Git Workflow
-- This is a **private repository** accessed via `GITHUB_AGENT_GUIDELINES_TOKEN`
+- This is a **private repository** with **Claude GitHub App** installed
+- Also accessible via `GITHUB_AGENT_GUIDELINES_TOKEN` for legacy integrations
 - Commit directly to `main` branch (no PR process)
 - Use descriptive commit messages explaining the "what" and "why"
 - Push immediately after committing
@@ -132,9 +143,12 @@ The color palette uses a **light theme** with dual text colors:
 - ✅ "Use Google-style docstrings" with concrete examples
 - ❌ NOT "Consider documenting your code"
 
-## Token Access
+## Repository Access
 
-AI agents access this private repository using the `GITHUB_AGENT_GUIDELINES_TOKEN` environment variable for read operations when building other projects.
+AI agents can access this private repository through two methods:
+
+1. **Claude GitHub App** - Primary integration for Claude-based agents with full repository access
+2. **`GITHUB_AGENT_GUIDELINES_TOKEN`** - Environment variable for legacy integrations and read operations when building other projects
 
 ## Examples From This Codebase
 
@@ -148,9 +162,15 @@ AI agents access this private repository using the `GITHUB_AGENT_GUIDELINES_TOKE
 
 **Good color specification** (from `colors/default-palette.md`):
 ```markdown
-- **`#F5F7FA`** - Main background
+- **`#F5F7FA`** - Main background (light mode)
   - Use for: Page backgrounds, main canvas areas
   - Soft off-white with subtle blue-gray tint
+  - Tailwind equivalent: `bg-gray-50`
+
+- **`#5A7A99`** - Primary accent (both themes)
+  - Use for: Primary buttons, important interactive elements
+  - Muted blue-gray for professional calls-to-action
+  - Works in both light and dark modes
 ```
 
 **README references** show how external agents use these guidelines:

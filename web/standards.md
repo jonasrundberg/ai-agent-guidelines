@@ -48,6 +48,57 @@ Use the CDN with inline config for custom colors:
 </script>
 ```
 
+---
+
+## Icons
+
+### Heroicons
+Use [Heroicons](https://heroicons.com/) for all UI icons. Heroicons does not have a CDN - copy SVG code directly into your HTML.
+
+```html
+<!-- Example: Plus icon in a button -->
+<button class="flex items-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+    </svg>
+    Add Item
+</button>
+
+<!-- Example: Success icon with color -->
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-600">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+</svg>
+```
+
+### Icon Styles
+Heroicons provides three styles:
+- **Outline** (default): Stroked icons for most use cases
+- **Solid**: Filled icons for emphasis or small sizes
+- **Mini/Micro**: Smaller icons for compact UIs
+
+### Common Sizes
+```html
+<!-- Small icons (16px) -->
+<svg class="w-4 h-4">...</svg>
+
+<!-- Default icons (20px) -->
+<svg class="w-5 h-5">...</svg>
+
+<!-- Medium icons (24px) -->
+<svg class="w-6 h-6">...</svg>
+```
+
+### Do's
+- Copy SVG code from heroicons.com for each icon
+- Use Tailwind classes (`w-5 h-5`) for sizing
+- Use `stroke="currentColor"` to inherit text color
+- Combine with `flex items-center gap-2` for buttons
+
+### Don'ts
+- Don't use emoji or Unicode symbols for UI icons
+- Don't use image files for simple icons
+- Don't forget to add accessible labels for icon-only buttons
+
 ### Common Patterns
 ```html
 <!-- Button -->
@@ -155,6 +206,7 @@ const activeUsers = users
 |----------|----------|
 | **HTML** | Semantic elements, accessibility |
 | **CSS** | Tailwind CSS utility classes |
+| **Icons** | Heroicons (copy SVG from heroicons.com) |
 | **JavaScript** | Modern ES6+, async/await |
 | **Responsive** | Desktop-first, works on both desktop and mobile |
 | **Breakpoints** | `sm:` (640px), `md:` (768px), `lg:` (1024px), `xl:` (1280px) |
