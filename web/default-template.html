@@ -28,7 +28,7 @@
     <style>
         /* Light mode gradient */
         .gradient-content-bg {
-            background: linear-gradient(135deg, #F5F7FA 0%, #FFFFFF 100%);
+            background: linear-gradient(135deg, #EEF2F6 0%, #FFFFFF 100%);
         }
 
         /* Dark mode gradient */
@@ -48,17 +48,17 @@
     </script>
 </head>
 
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+<body class="bg-[#EEF2F6] dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
     <!-- Header -->
     <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div class="max-w-7xl mx-auto px-4 py-6 flex items-center justify-between">
             <div>
                 <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100">Main Header</h1>
-                <p class="mt-2 text-gray-600 dark:text-gray-400">Professional tech application interface</p>
+                <p class="mt-2 text-gray-600 dark:text-gray-400">Web app UI Template</p>
             </div>
             <!-- Theme Toggle Button -->
             <button id="themeToggle"
-                class="p-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition"
+                class="p-2 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition"
                 aria-label="Toggle theme">
                 <!-- Sun icon (shown in dark mode) -->
                 <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -87,7 +87,7 @@
         <!-- Primary Action Buttons -->
         <div class="flex gap-4 mb-8 flex-wrap">
             <button
-                class="bg-blue-highlight hover:bg-blue-active text-white px-6 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                class="bg-blue-highlight hover:bg-blue-active text-white px-5 py-1.5 rounded-xl font-medium transition flex items-center gap-2 shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -95,7 +95,7 @@
                 Primary Action
             </button>
             <button
-                class="bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 px-6 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                class="bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 px-5 py-1.5 rounded-xl font-medium transition flex items-center gap-2 shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -111,7 +111,7 @@
             <h3 class="text-lg font-semibold mb-3 text-gray-900 dark:text-gray-100">Status Colors</h3>
             <div class="flex gap-4 flex-wrap mb-4">
                 <button
-                    class="bg-status-success hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                    class="bg-status-success hover:opacity-90 text-white px-5 py-1.5 rounded-xl font-medium transition flex items-center gap-2 shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -120,7 +120,7 @@
                     Success
                 </button>
                 <button
-                    class="bg-status-error hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                    class="bg-status-error hover:opacity-90 text-white px-5 py-1.5 rounded-xl font-medium transition flex items-center gap-2 shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -129,7 +129,7 @@
                     Error
                 </button>
                 <button
-                    class="bg-status-warning hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                    class="bg-status-warning hover:opacity-90 text-white px-5 py-1.5 rounded-xl font-medium transition flex items-center gap-2 shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -138,7 +138,7 @@
                     Warning
                 </button>
                 <button
-                    class="bg-status-info hover:opacity-90 text-white px-6 py-2 rounded-lg font-medium transition flex items-center gap-2">
+                    class="bg-status-info hover:opacity-90 text-white px-5 py-1.5 rounded-xl font-medium transition flex items-center gap-2 shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -161,7 +161,7 @@
 
         <!-- Feature Card with Stats -->
         <div
-            class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg mb-8 overflow-hidden shadow-sm">
+            class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl mb-8 overflow-hidden shadow-lg">
             <!-- Card Header -->
             <div class="p-6 border-b border-gray-200 dark:border-gray-700 flex items-start justify-between">
                 <div>
@@ -174,7 +174,7 @@
                     </div>
                 </div>
                 <button
-                    class="bg-blue-highlight hover:bg-blue-active text-white px-4 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2">
+                    class="bg-blue-highlight hover:bg-blue-active text-white px-4 py-2 rounded-xl text-sm font-medium transition flex items-center gap-2 shadow-lg">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-4 h-4">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -296,7 +296,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             <!-- Card 1 -->
             <div
-                class="bg-secondary-surface border border-border rounded-lg hover:border-blue-highlight transition overflow-hidden">
+                class="bg-secondary-surface border border-border rounded-xl hover:border-blue-highlight transition overflow-hidden shadow-lg">
                 <div class="gradient-content-bg p-6">
                     <h3 class="text-xl font-semibold mb-3 text-text-primary">Card Title 1</h3>
                     <p class="mb-4 text-text-secondary">Dark themed cards with subtle shaded backgrounds and hover
@@ -316,7 +316,7 @@
 
             <!-- Card 2 -->
             <div
-                class="bg-secondary-surface border border-border rounded-lg hover:border-blue-highlight transition overflow-hidden">
+                class="bg-secondary-surface border border-border rounded-xl hover:border-blue-highlight transition overflow-hidden shadow-lg">
                 <div class="gradient-content-bg p-6">
                     <h3 class="text-xl font-semibold mb-3 text-text-primary">Card Title 2</h3>
                     <p class="mb-4 text-text-secondary">Professional dark theme with excellent contrast and readability.
@@ -335,7 +335,7 @@
 
             <!-- Card 3 -->
             <div
-                class="bg-secondary-surface border border-border rounded-lg hover:border-blue-highlight transition overflow-hidden">
+                class="bg-secondary-surface border border-border rounded-xl hover:border-blue-highlight transition overflow-hidden shadow-lg">
                 <div class="gradient-content-bg p-6">
                     <h3 class="text-xl font-semibold mb-3 text-text-primary">Card Title 3</h3>
                     <p class="mb-4 text-text-secondary">Clean, modern dark interface with cohesive color system.</p>
@@ -356,19 +356,19 @@
         <div class="mb-8">
             <h3 class="text-lg font-semibold mb-3 text-text-primary">Dark Theme Color Palette</h3>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-primary-bg border border-border p-4 rounded-lg">
+                <div class="bg-primary-bg border border-border p-4 rounded-xl shadow-lg">
                     <div class="text-xs font-mono mb-1 text-text-primary">#0A0E1A</div>
                     <div class="text-xs text-text-secondary">Main BG</div>
                 </div>
-                <div class="bg-secondary-surface border border-border p-4 rounded-lg">
+                <div class="bg-secondary-surface border border-border p-4 rounded-xl shadow-lg">
                     <div class="text-xs font-mono mb-1 text-text-primary">#1A1F2E</div>
                     <div class="text-xs text-text-secondary">Cards</div>
                 </div>
-                <div class="bg-blue-highlight p-4 rounded-lg">
+                <div class="bg-blue-highlight p-4 rounded-xl shadow-lg">
                     <div class="text-xs font-mono mb-1 text-white">#5A7A99</div>
                     <div class="text-xs text-white">Primary</div>
                 </div>
-                <div class="bg-blue-link p-4 rounded-lg">
+                <div class="bg-blue-link p-4 rounded-xl shadow-lg">
                     <div class="text-xs font-mono mb-1 text-white">#6B8CAE</div>
                     <div class="text-xs text-white">Links</div>
                 </div>
@@ -376,7 +376,7 @@
         </div>
 
         <!-- Text Section -->
-        <div class="mt-8 bg-secondary-surface border border-border rounded-lg p-8">
+        <div class="mt-8 bg-secondary-surface border border-border rounded-xl p-8 shadow-lg">
             <h2 class="text-2xl font-bold mb-4 text-text-primary">Content Section</h2>
             <p class="mb-4 text-text-primary">
                 This is a paragraph of text using the dark theme palette. The color system provides
@@ -391,10 +391,11 @@
             </p>
             <div class="flex gap-3 mt-6 flex-wrap">
                 <button
-                    class="bg-blue-highlight hover:bg-blue-active text-white px-5 py-2 rounded-lg font-medium transition">
+                    class="bg-blue-highlight hover:bg-blue-active text-white px-5 py-1.5 rounded-xl font-medium transition shadow-lg">
                     Primary Action
                 </button>
-                <button class="bg-status-error hover:opacity-90 text-white px-5 py-2 rounded-lg font-medium transition">
+                <button
+                    class="bg-status-error hover:opacity-90 text-white px-5 py-1.5 rounded-xl font-medium transition shadow-lg">
                     Destructive Action
                 </button>
             </div>

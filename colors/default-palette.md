@@ -10,20 +10,20 @@ Both themes share consistent accent and status colors for unified branding acros
 ## Light Theme Colors
 
 ### Background & Surfaces (Light Mode)
-- **`#F5F7FA`** - Main background (light)
+- **`#EEF2F6`** - Main background (light)
   - Use for: Page backgrounds, main canvas areas
-  - Soft off-white with subtle blue-gray tint
-  - Tailwind equivalent: `bg-gray-50`
+  - Slightly darker off-white with subtle blue-gray tint for better contrast
+  - Tailwind equivalent: `bg-gray-100` or custom
 
 - **`#FFFFFF`** - Secondary surface (light)
   - Use for: Cards, panels, modals, header/footer
   - Pure white for elevated components
   - Tailwind equivalent: `bg-white`
 
-- **`#F5F7FA`** - Content background gradient start (light)
+- **`#EEF2F6`** - Content background gradient start (light)
   - Use for: Shaded content sections with subtle gradient
   - Creates visual hierarchy in light mode
-  - Gradient: `linear-gradient(135deg, #F5F7FA 0%, #FFFFFF 100%)`
+  - Gradient: `linear-gradient(135deg, #EEF2F6 0%, #FFFFFF 100%)`
 
 ### Borders & Text (Light Mode)
 - **`#E5E7EB`** - Borders & dividers (light)
@@ -152,10 +152,10 @@ Both themes share consistent accent and status colors for unified branding acros
 
 ---
 
-## Usage Guidelines
+### Usage Guidelines
 
 ### Do's
-- **Light mode**: Use `#F5F7FA` or `bg-gray-50` as the base for all pages
+- **Light mode**: Use `#EEF2F6` or custom bg as the base for all pages
 - **Dark mode**: Use `#0A0E1A` or `bg-gray-900` as the base for all pages
 - Layer white/`#1A1F2E` for cards and elevated components (depending on theme)
 - Use gradients for content sections to create subtle depth in both themes
@@ -174,7 +174,7 @@ Both themes share consistent accent and status colors for unified branding acros
 - Don't use hard-coded colors without dark mode alternatives
 
 ### Accessibility
-- **Light mode**: Primary text (`#1A1F2E`) on main background (`#F5F7FA`) meets WCAG AA standards
+- **Light mode**: Primary text (`#1A1F2E`) on main background (`#EEF2F6`) meets WCAG AA standards
 - **Dark mode**: Primary text (`#E8EDF2`) on main background (`#0A0E1A`) meets WCAG AA standards
 - All status colors are distinguishable for colorblind users in both themes
 - Accent colors provide sufficient contrast for interactive elements
@@ -185,27 +185,27 @@ Both themes share consistent accent and status colors for unified branding acros
 **Using Tailwind CSS (Recommended)**:
 ```html
 <!-- Page background -->
-<body class="bg-gray-50 dark:bg-gray-900">
+<body class="bg-[#EEF2F6] dark:bg-gray-900">
 
 <!-- Header/Footer -->
 <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
 
 <!-- Card with gradient content -->
-<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg">
+<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg">
   <div class="gradient-content-bg p-6">
     <!-- Content -->
   </div>
 </div>
 
 <!-- Button primary -->
-<button class="bg-blue-highlight hover:bg-blue-active text-white px-6 py-2 rounded-lg">
+<button class="bg-blue-highlight hover:bg-blue-active text-white px-5 py-1.5 rounded-lg">
   Primary Action
 </button>
 
 <!-- Button secondary -->
 <button class="bg-white dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 
                text-gray-900 dark:text-gray-100 border border-gray-300 dark:border-gray-600 
-               px-6 py-2 rounded-lg">
+               px-5 py-1.5 rounded-lg">
   Secondary Action
 </button>
 
@@ -223,7 +223,7 @@ Both themes share consistent accent and status colors for unified branding acros
 ```css
 /* Light mode content gradient */
 .gradient-content-bg {
-  background: linear-gradient(135deg, #F5F7FA 0%, #FFFFFF 100%);
+  background: linear-gradient(135deg, #EEF2F6 0%, #FFFFFF 100%);
 }
 
 /* Dark mode content gradient */
@@ -269,7 +269,7 @@ tailwind.config = {
 ### Light Theme
 | Purpose | Color | Hex | Tailwind |
 |---------|-------|-----|----------|
-| Main background | Soft off-white | `#F5F7FA` | `bg-gray-50` |
+| Main background | Slightly darker off-white | `#EEF2F6` | `bg-[#EEF2F6]` |
 | Secondary surface | White | `#FFFFFF` | `bg-white` |
 | Border | Light gray | `#E5E7EB` | `border-gray-200` |
 | Primary text | Dark blue-gray | `#1A1F2E` | `text-gray-900` |
